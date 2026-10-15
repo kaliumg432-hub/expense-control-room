@@ -1,0 +1,18 @@
+{
+  "name": "expense-control-room",
+  "version": "1.0.0",
+  "description": "Expense control app for a Kenyan ISP: classifies Tende wallet payments, tracks bills, payroll and budgets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "sample": "python3 make_sample_data.py"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "papaparse": "^5.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.4"
+  }
+}
