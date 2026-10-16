@@ -68,7 +68,7 @@ const RULES = [
   { cat: "Fuel & Transport", sub: "Bike rent", re: /\bbikes?\b.{0,15}\b(rent|payments?)\b/ },
   { cat: "Fuel & Transport", sub: "Vehicle expense", re: /\bparking\b|car service|radiator|car wash|tyres?|puncture|mechanic/ },
   { cat: "Fuel & Transport", sub: "Delivery fees", re: /deliver(y|ies)/ },
-  { cat: "Connectivity", sub: "Internet link", re: /link carrier|internet link|bandwidth|\blink (january|february|march|april|may|june|july|august|september|october|november|december)\b|\b(january|february|march|april|may|june|july|august|september|october|november|december) link\b|bypass link/ },
+  { cat: "Connectivity", sub: "Internet link", re: /link carrier|internet link|bandwidth|\blink (january|february|march|april|may|june|july|august|september|october|november|december)\b|\b(january|february|march|april|may|june|july|august|september|october|november|december) link\b/ },
   { cat: "Connectivity", sub: "Hotspot tokens", re: /hotspot tokens?|tokens?.{0,15}hotspot/ },
   { cat: "Premises", sub: "Electricity", re: /server room token|electricity|kplc|power token|\btokens?\b/ },
   { cat: "Connectivity", sub: "Advanta bundles", re: /advanta/ },
@@ -2427,7 +2427,7 @@ function PendingView({ an, win, pending, setPending, cal }) {
       </section>
       <Section title="Add an obligation">
         <div className="flex flex-wrap" style={{ gap: 8 }}>
-          <input placeholder="What is owed (e.g. August Bypass rent)" value={f.desc} onChange={(e) => setF({ ...f, desc: e.target.value })} style={{ flex: "2 1 240px" }} />
+          <input placeholder="What is owed (e.g. August office rent)" value={f.desc} onChange={(e) => setF({ ...f, desc: e.target.value })} style={{ flex: "2 1 240px" }} />
           <select value={f.category} onChange={(e) => setF({ ...f, category: e.target.value })}><option value="">Category</option>{CATEGORY_ORDER.map((c) => <option key={c}>{c}</option>)}</select>
           <input placeholder="Payee" value={f.payee} onChange={(e) => setF({ ...f, payee: e.target.value })} style={{ flex: "1 1 140px" }} />
           <input placeholder="Amount" inputMode="numeric" value={f.amount} onChange={(e) => setF({ ...f, amount: e.target.value.replace(/[^\d]/g, "") })} style={{ width: 110 }} />
